@@ -62,6 +62,9 @@ flutter run -d macos   # or windows
 ## Build
 
 ```bash
+flutter clean
+rm -rf macos/Pods macos/Podfile.lock
+flutter pub get
 flutter build macos --release
 flutter build windows --release
 ```
