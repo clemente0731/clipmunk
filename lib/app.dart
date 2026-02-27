@@ -46,7 +46,7 @@ class _ClipMunkAppState extends State<ClipMunkApp> with WindowListener {
       onPasteTemplate: (int index) async {
         final content = templateRepository.getTemplate(index);
         if (content.isNotEmpty) {
-          await clipboardService.copyAndPaste(content);
+          await clipboardService.copyToClipboard(content);
         }
       },
       getTemplateLabel: (int index) {

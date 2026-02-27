@@ -92,17 +92,15 @@ class _HomePageState extends State<HomePage> {
 
                 // body
                 Text(
-                  'Enable right-click paste services:',
+                  'How Clipmunk works:',
                   style: Typo.label.copyWith(color: Palette.textPrimary),
                 ),
                 const SizedBox(height: Grid.x3),
-                _guideStep('1', 'Open System Settings'),
+                _guideStep('1', 'Set up your text templates in the Templates tab'),
                 const SizedBox(height: Grid.x2),
-                _guideStep('2', 'Go to Keyboard → Keyboard Shortcuts → Services'),
+                _guideStep('2', 'Press hotkey (⌘⌥1-5) to copy template to clipboard'),
                 const SizedBox(height: Grid.x2),
-                _guideStep('3', 'Find "Clipmunk - Paste 1/2/3" under Text'),
-                const SizedBox(height: Grid.x2),
-                _guideStep('4', 'Enable all three services'),
+                _guideStep('3', 'Press ⌘V to paste in any app'),
                 const SizedBox(height: Grid.x4),
 
                 // note
@@ -122,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(width: Grid.x2),
                       Expanded(
                         child: Text(
-                          'After enabling, right-click in any text field → Services → Clipmunk to use quick paste.',
+                          'Hotkeys instantly load templates into your clipboard. You can also enable right-click Services in System Settings → Keyboard → Shortcuts.',
                           style: Typo.caption.copyWith(
                             color: Palette.textPrimary,
                             height: 1.5,

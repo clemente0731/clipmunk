@@ -30,7 +30,7 @@ void main() async {
   hotkeyService.onHotkeyPressed = (int templateIndex) async {
     final content = templateRepository.getTemplate(templateIndex);
     if (content.isNotEmpty) {
-      await clipboardService.copyAndPaste(content);
+      await clipboardService.copyToClipboard(content);
     }
   };
 

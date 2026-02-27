@@ -4,40 +4,12 @@ import 'package:flutter/services.dart';
 /// number of templates exposed to macOS Services right-click menu
 const int nativeServiceSlotCount = 3;
 
-/// service for clipboard operations and simulating paste
+/// service for clipboard operations (copy-only, App Store sandbox compatible)
 class ClipboardService {
-  static const _channel = MethodChannel('com.clipmunk.clipboard');
   static const _templateChannel = MethodChannel('com.clipmunk.templates');
 
-  /// copy text to clipboard and simulate paste action
-  Future<void> copyAndPaste(String text) async {
-    if (text.isEmpty) {
-      return;
-    }
-
-    // write to clipboard
-    await Clipboard.setData(ClipboardData(text: text));
-
-    // brief delay to ensure clipboard is ready
-    await Future.delayed(const Duration(milliseconds: 50));
-
-    // simulate paste keystroke
-    await _simulatePaste();
-  }
-
-  /// simulate Ctrl+V (Win) or Cmd+V (Mac) keystroke
-  Future<void> _simulatePaste() async {
-    try {
-      await _channel.invokeMethod('simulatePaste');
-    } catch (e) {
-      // fallback: if platform channel not implemented,
-      // clipboard is already set - user can paste manually
-      debugPrint('paste simulation not available: $e');
-    }
-  }
-
-  /// copy text to clipboard only (no paste simulation)
-  Future<void> copyOnly(String text) async {
+  /// copy text to clipboard (user pastes manually with Cmd+V / Ctrl+V)
+  Future<void> copyToClipboard(String text) async {
     if (text.isEmpty) {
       return;
     }

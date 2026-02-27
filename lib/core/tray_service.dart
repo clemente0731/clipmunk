@@ -75,8 +75,8 @@ class TrayService {
     for (int i = 0; i < trayPasteSlotCount; i++) {
       final label = _getTemplateLabel?.call(i) ?? '';
       final displayLabel = label.isNotEmpty
-          ? 'Paste ${i + 1}: $label'
-          : 'Paste ${i + 1}';
+          ? 'Copy ${i + 1}: $label'
+          : 'Copy ${i + 1}';
       items.add(MenuItemLabel(
         label: displayLabel,
         onClicked: (_) => _onPasteTemplate?.call(i),
