@@ -1,6 +1,6 @@
 # Clipmunk Icons
 
-Pixel-art retro-futuristic "P" icon in CRT cyan glow style.
+Pixel-art retro-futuristic icon in CRT cyan glow style.
 
 - `tray_icon.png` - 128x128 PNG for macOS tray
 - `tray_icon.ico` - multi-size ICO (16/32/48/256) for Windows tray
